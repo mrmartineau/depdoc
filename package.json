@@ -1,0 +1,15 @@
+{
+  "name": "autodoc",
+  "version": "0.1.0",
+  "description": "Auto-generate documentation using package.json dependencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "MrMartineau",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "qwest": "^2.0.7"
+  }
+}
