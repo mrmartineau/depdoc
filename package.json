@@ -9,6 +9,7 @@
   "author": "MrMartineau",
   "license": "MIT",
   "dependencies": {
+    "got": "^4.1.1",
     "lodash": "^3.10.1",
     "qwest": "^2.0.7"
   }
