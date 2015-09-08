@@ -2,6 +2,10 @@
  * Autodoc
  * @author: Zander Martineau
  *
+ * USAGE:
+ * node index.js package.json ✔
+ * node index.js https://raw.githubusercontent.com/TryKickoff/kickoff/master/package.json
+ *
  * TODO:
  * - take a package.json as input ✔
  *   - could give a Github or Bitbucket repo url instead
@@ -33,8 +37,9 @@ function autodoc(packageURL) {
 		var newPackageUrl = packageURL.replace('https://raw.githubusercontent.com', 'https://rawgit.com')
 		// console.log('newPackageUrl', newPackageUrl);
 		got(newPackageUrl, function (err, data, res) {
-			// console.log('line 31', res.headers);
-			getPackageInformation(err, res.headers);
+			console.log('line 31', res.buffer);
+			// TODO: investigate the buffer
+			getPackageInformation(err, res.buffer);
 		});
 
 	} else {
@@ -52,7 +57,7 @@ function autodoc(packageURL) {
  */
 function getPackageInformation(err, data) {
 	if (err) throw err;
-	// console.log('line 51', data);
+	console.log('line 51', data);
 	var deps = JSON.parse(data).dependencies;
 	// console.log('deps', deps);
 
