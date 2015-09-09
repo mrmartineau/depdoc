@@ -15,6 +15,6 @@
   },
   "preferGlobal": "true",
   "bin": {
-      "autodoc" : "index.js"
+    "autodoc": "cli.js"
   }
 }
