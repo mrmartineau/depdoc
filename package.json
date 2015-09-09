@@ -9,9 +9,12 @@
   "author": "MrMartineau",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^1.1.1",
+    "commander": "^2.8.1",
+    "copy-paste": "^1.1.3",
     "got": "^4.1.1",
     "lodash": "^3.10.1",
-    "qwest": "^2.0.7"
+    "registry-url": "^3.0.3"
   },
   "preferGlobal": "true",
   "bin": {
