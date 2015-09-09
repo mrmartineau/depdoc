@@ -3,8 +3,8 @@
  * @author: Zander Martineau
  *
  * USAGE:
- * node index.js package.json ✔
- * node index.js https://raw.githubusercontent.com/TryKickoff/kickoff/master/package.json
+ * autodoc package.json ✔
+ * autodoc https://raw.githubusercontent.com/TryKickoff/kickoff/master/package.json
  *
  * TODO:
  * - take a package.json as input ✔
@@ -18,22 +18,20 @@
  * - Generate markdown with this information so that it can be copied into a readme
  *   - output in the console ✔
  *   - generate a new file
- *   - improve the output (e.g. highlighting§)
+ *   - improve the output (e.g. highlighting)
  * - Create better CLI experience using commander.js
+ *   - This should be placed in cli.js and requires this ✔
  * - Create an online version that takes json pasted in a textarea
  */
 
 var fs = require('fs');
 var _ = require('lodash');
 var got = require('got');
-
-var registryUrl = "https://registry.npmjs.org/"
+var registryUrl = require('registry-url')();
 
 function autodoc(packageURL) {
-	if (packageURL.slice(0, 4) === 'http') {
+	if (packageURL.indexOf('github') > 0) {
 		// console.log('package is from the net');
-		// https://rawgit.com/TryKickoff/kickoff/master/package.json
-		// https://raw.githubusercontent.com/TryKickoff/kickoff/master/package.json
 		var newPackageUrl = packageURL.replace('https://raw.githubusercontent.com', 'https://rawgit.com')
 		// console.log('newPackageUrl', newPackageUrl);
 		got(newPackageUrl, function (err, data, res) {
@@ -53,11 +51,11 @@ function autodoc(packageURL) {
 }
 
 /**
- * Get package.json contents with AJAX if its located online
+ * Get package.json contents
  */
 function getPackageInformation(err, data) {
 	if (err) throw err;
-	console.log('line 51', data);
+	console.log('line 60', data);
 	var deps = JSON.parse(data).dependencies;
 	// console.log('deps', deps);
 
@@ -88,4 +86,4 @@ function getPackageInformation(err, data) {
 	});
 }
 
-autodoc(process.argv[2]);
+module.exports = autodoc;
