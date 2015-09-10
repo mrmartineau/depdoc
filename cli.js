@@ -27,15 +27,13 @@ program
 var result;
 
 // If there is no argv, try to use a package.json in the same directory
-// if (userArgs[0] === 'undefined') {
-// 	console.log('no argv');
-// 	autodoc(package.json);
-// } else {
-//
-	autodoc(program.file); // or
-	// autodoc(userArgs[0]);
-
-// }
+if (userArgs[0].indexOf('package.json') === -1) {
+	console.log('no argv');
+	result = autodoc('package.json');
+} else {
+	// autodoc(program.file); // or
+	result = autodoc(userArgs[0]);
+}
 
 if (program.generate) {
 	// Generate a markdown file
