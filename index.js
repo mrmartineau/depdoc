@@ -4,11 +4,14 @@
  *
  * USAGE:
  * autodoc package.json ✔
- * autodoc https://raw.githubusercontent.com/TryKickoff/kickoff/master/package.json
+ * autodoc https://raw.githubusercontent.com/TryKickoff/kickoff/master/package.json ✔
  *
  * TODO:
  * - Create an online version that takes json pasted in a textarea
  * - If zero dependencies, tell the user about it
+ * - Error handling:
+ *   - if the registry is down
+ *   - if the path/filename is incorrect/doesn't exist
  */
 
 var fs = require('fs');
@@ -39,7 +42,6 @@ function autodoc(packageURL) {
  */
 function getPackageInformation(data) {
 	var deps = JSON.parse(data).dependencies;
-	console.log('deps', deps.length);
 	var result = '';
 
 	_.forEach(deps,
@@ -56,10 +58,10 @@ function getPackageInformation(data) {
 			var repo        = packageInfo.repository;
 			var license     = packageInfo.license;
 
-			result = result + '## ['+ name +']('+ homepage +')' +
+			result += '## ['+ name +']('+ homepage +')' +
 			'\n'+ description +
 			'\n\n[npm](http://npmjs.org/'+ key +') - [Homepage]('+ homepage +') - [Repository]('+ repo.url +') ('+ repo.type +') - [Issues]('+ issues +') - Licence: '+ license +
-			'\nInstall with `npm install '+ name +'`' +
+			'\n\nInstall with `npm install '+ name +'`' +
 			'\n---\n';
 		});
 	return result;
