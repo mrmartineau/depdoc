@@ -9,7 +9,6 @@
   "author": "MrMartineau",
   "license": "MIT",
   "dependencies": {
-    "async": "^1.4.2",
     "chalk": "^1.1.1",
     "commander": "^2.8.1",
     "copy-paste": "^1.1.3",
