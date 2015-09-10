@@ -3,18 +3,16 @@ var autodoc = require('./');
 var program = require('commander');
 var version = require('./package').version
 var copyPaste = require('copy-paste');
+var fs = require('fs');
 
 var userArgs = process.argv.slice(2);
 
 /**
  * TODO:
- * - Options:
- *   - print in the console ✔
- *   - generate a new file
- *   - copy to clipbpard ✔
  * - Defaults:
- *   - print ✔
- *   - if there's no argument, try to use a package.json from the cwd. ✔
+ *   - print to console
+ *   - if there's no argument, try to use a package.json from the cwd. ✔ (is this needed?)
+ * - show waiting animation
  */
 
 program
@@ -36,17 +34,15 @@ if (userArgs[0].indexOf('package.json') === -1) {
 	result = autodoc(userArgs[0]);
 }
 
+
 if (program.generate) {
-	// Generate a markdown file
-	console.log('cli generate: '+ result);
+	fs.writeFileSync('autodoc.md', result);
 }
 
 if (program.print) {
-	// Print to console
 	console.log(result);
 }
 
 if (program.copy) {
-	// Copy to clipboard
 	copyPaste.copy(result);
 }
