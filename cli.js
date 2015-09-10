@@ -2,18 +2,19 @@
 var autodoc = require('./');
 var program = require('commander');
 var version = require('./package').version
+var copyPaste = require('copy-paste');
 
 var userArgs = process.argv.slice(2);
 
 /**
  * TODO:
  * - Options:
- *   - print in the console
+ *   - print in the console ✔
  *   - generate a new file
- *   - copy to clipbpard
+ *   - copy to clipbpard ✔
  * - Defaults:
- *   - print
- *   - if there's no argument, try to use a package.json from the cwd. If nothing,
+ *   - print ✔
+ *   - if there's no argument, try to use a package.json from the cwd. ✔
  */
 
 program
@@ -28,7 +29,7 @@ var result;
 
 // If there is no argv, try to use a package.json in the same directory
 if (userArgs[0].indexOf('package.json') === -1) {
-	console.log('no argv');
+	// console.log('no argv');
 	result = autodoc('package.json');
 } else {
 	// autodoc(program.file); // or
@@ -42,10 +43,10 @@ if (program.generate) {
 
 if (program.print) {
 	// Print to console
-	console.log('cli print: '+ result);
+	console.log(result);
 }
 
 if (program.copy) {
 	// Copy to clipboard
-	console.log('cli copy: '+ result);
+	copyPaste.copy(result);
 }
