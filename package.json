@@ -1,10 +1,10 @@
 {
-	"name": "autodoc",
+	"name": "autodocs",
 	"version": "0.3.0",
 	"description": "Auto-generate documentation using your package.json's dependencies",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/mrmartineau/autodoc.git"
+		"url": "https://github.com/mrmartineau/autodocs.git"
 	},
 	"main": "index.js",
 	"author": {
@@ -21,7 +21,7 @@
 	},
 	"preferGlobal": "true",
 	"bin": {
-		"autodoc": "cli.js"
+		"autodocs": "cli.js"
 	},
 	"keywords": [
 		"documentation",
@@ -29,7 +29,7 @@
 		"docs"
 	],
 	"bugs": {
-		"url": "https://github.com/mrmartineau/autodoc/issues"
+		"url": "https://github.com/mrmartineau/autodocs/issues"
 	},
-	"homepage": "https://github.com/mrmartineau/autodoc",
+	"homepage": "https://github.com/mrmartineau/autodocs"
 }

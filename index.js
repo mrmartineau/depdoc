@@ -1,5 +1,5 @@
 /**
- * Autodoc
+ * Autodocs
  * @author: Zander Martineau
  *
  * USAGE:
@@ -19,7 +19,7 @@ var _ = require('lodash');
 var registryUrl = require('registry-url')();
 var request = require('sync-request');
 
-function autodoc(packageURL) {
+function autodocs(packageURL) {
 	var result;
 
 	if (packageURL.indexOf('github') > 0) {
@@ -66,4 +66,4 @@ function getPackageInformation(data) {
 	return result;
 }
 
-module.exports = autodoc;
+module.exports = autodocs;

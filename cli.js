@@ -19,7 +19,7 @@ var userArgs = process.argv.slice(2);
 program
 	.version(version)
 	.option('-f, --file [file]', 'The file you are parsing', 'package.json')
-	.option('-g, --generate [name]', 'Generate a markdown file of the result', 'autodoc')
+	.option('-g, --generate [name]', 'Generate a markdown file of the result', 'autodocs')
 	.option('-p, --print', 'Print result to the console')
 	.option('-c, --copy', 'Copy result to clipboard')
 	.parse(process.argv);
@@ -28,7 +28,6 @@ var result;
 
 // If there is no argv, try to use a package.json in the same directory
 if (userArgs[0].indexOf('package.json') === -1) {
-	// console.log('no argv');
 	result = autodoc('package.json');
 } else {
 	// autodoc(program.file); // or
@@ -47,5 +46,5 @@ if (program.print) {
 
 if (program.copy) {
 	copyPaste.copy(result);
-	console.log('Success! Autodoc has copied the results to your clipboard');
+	console.log('Success! autodocs has copied the results to your clipboard');
 }
