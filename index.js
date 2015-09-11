@@ -19,7 +19,6 @@ var _ = require('lodash');
 var registryUrl = require('registry-url')();
 var request = require('sync-request');
 
-
 function autodoc(packageURL) {
 	var result;
 
