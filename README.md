@@ -1,18 +1,18 @@
-# autodocs
+# depdoc
 > Auto-generate documentation using your package.json's dependencies
 
-Autodoc simply scans your `package.json`'s `dependencies` property and returns some simple information about each item. For an example, please see this package's own [auodoc.md](https://github.com/mrmartineau/autodoc/blob/master/autodoc).
+depdoc simply scans your `package.json`'s `dependencies` property and returns some simple information about each item. For an example, please see this package's own [depdoc.md](https://github.com/mrmartineau/depdoc/blob/master/depdoc.md).
 
 ## Install
 
 ```sh
-npm install --global autodoc
+npm install --global depdoc
 ```
 
 ## CLI
 
 ```sh
-Usage: autodoc <filepath> [options]
+Usage: depdoc <filepath> [options]
 
 Options:
 
@@ -27,35 +27,35 @@ Options:
 
 ### Print result to the console
 ```sh
-autodoc <filepath> -p
+depdoc <filepath> -p
 
-autodoc package.json -p
-autodoc https://raw.githubusercontent.com/TryKickoff/generator-kickoff/master/package.json -p
+depdoc package.json -p
+depdoc https://raw.githubusercontent.com/TryKickoff/generator-kickoff/master/package.json -p
 ```
 Note: files hosted on github.com can also be used
 
 ### Copy result to your clipboard
 ```sh
-autodoc <filepath> -c
+depdoc <filepath> -c
 
-autodoc package.json -c
-autodoc https://raw.githubusercontent.com/TryKickoff/generator-kickoff/master/package.json -c
+depdoc package.json -c
+depdoc https://raw.githubusercontent.com/TryKickoff/generator-kickoff/master/package.json -c
 ```
 
 ### Create markdown file of result
-Default filename is `autodoc.md`
+Default filename is `depdoc.md`
 ```sh
-autodoc <filepath> -g
+depdoc <filepath> -g
 
-autodoc package.json -g dependencies
-autodoc https://raw.githubusercontent.com/TryKickoff/generator-kickoff/master/package.json -g dependencies
+depdoc package.json -g dependencies
+depdoc https://raw.githubusercontent.com/mrmartineau/depdoc/master/package.json -g dependencies
 ```
 
 ## Usage (unfinished)
 
 ```js
-var autodoc = require('autodoc');
+var depdoc = require('depdoc');
 var package = require('./package');
 
-console.log(autodoc(package));
+console.log(depdoc(package));
 ```

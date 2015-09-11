@@ -1,10 +1,10 @@
 /**
- * Autodocs
+ * depdoc
  * @author: Zander Martineau
  *
  * USAGE:
- * autodoc package.json ✔
- * autodoc https://raw.githubusercontent.com/TryKickoff/kickoff/master/package.json ✔
+ * depdoc package.json ✔
+ * depdoc https://raw.githubusercontent.com/TryKickoff/kickoff/master/package.json ✔
  *
  * TODO:
  * - Create an online version that takes json pasted in a textarea
@@ -19,7 +19,7 @@ var _ = require('lodash');
 var registryUrl = require('registry-url')();
 var request = require('sync-request');
 
-function autodocs(packageURL) {
+function depdoc(packageURL) {
 	var result;
 
 	if (packageURL.indexOf('github') > 0) {
@@ -66,4 +66,4 @@ function getPackageInformation(data) {
 	return result;
 }
 
-module.exports = autodocs;
+module.exports = depdoc;

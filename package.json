@@ -1,10 +1,10 @@
 {
-	"name": "autodocs",
+	"name": "depdoc",
 	"version": "0.3.0",
-	"description": "Auto-generate documentation using your package.json's dependencies",
+	"description": "Auto-generate documentation using your package.json's dependencies property",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/mrmartineau/autodocs.git"
+		"url": "https://github.com/mrmartineau/depdoc.git"
 	},
 	"main": "index.js",
 	"author": {
@@ -21,7 +21,7 @@
 	},
 	"preferGlobal": "true",
 	"bin": {
-		"autodocs": "cli.js"
+		"depdoc": "cli.js"
 	},
 	"keywords": [
 		"documentation",
@@ -29,7 +29,7 @@
 		"docs"
 	],
 	"bugs": {
-		"url": "https://github.com/mrmartineau/autodocs/issues"
+		"url": "https://github.com/mrmartineau/depdoc/issues"
 	},
-	"homepage": "https://github.com/mrmartineau/autodocs"
+	"homepage": "https://github.com/mrmartineau/depdoc"
 }

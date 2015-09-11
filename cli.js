@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-var autodoc = require('./');
+var depdoc = require('./');
 var program = require('commander');
 var version = require('./package').version
 var copyPaste = require('copy-paste');
@@ -19,7 +19,7 @@ var userArgs = process.argv.slice(2);
 program
 	.version(version)
 	.option('-f, --file [file]', 'The file you are parsing', 'package.json')
-	.option('-g, --generate [name]', 'Generate a markdown file of the result', 'autodocs')
+	.option('-g, --generate [name]', 'Generate a markdown file of the result', 'depdoc')
 	.option('-p, --print', 'Print result to the console')
 	.option('-c, --copy', 'Copy result to clipboard')
 	.parse(process.argv);
@@ -28,10 +28,10 @@ var result;
 
 // If there is no argv, try to use a package.json in the same directory
 if (userArgs[0].indexOf('package.json') === -1) {
-	result = autodoc('package.json');
+	result = depdoc('package.json');
 } else {
-	// autodoc(program.file); // or
-	result = autodoc(userArgs[0]);
+	// depdoc(program.file); // or
+	result = depdoc(userArgs[0]);
 }
 
 
@@ -46,5 +46,5 @@ if (program.print) {
 
 if (program.copy) {
 	copyPaste.copy(result);
-	console.log('Success! autodocs has copied the results to your clipboard');
+	console.log('Success! depdoc has copied the results to your clipboard');
 }
