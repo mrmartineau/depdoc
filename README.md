@@ -1,4 +1,4 @@
-# Autodoc
+# autodocs
 > Auto-generate documentation using your package.json's dependencies
 
 Autodoc simply scans your `package.json`'s `dependencies` property and returns some simple information about each item. For an example, please see this package's own [auodoc.md](https://github.com/mrmartineau/autodoc/blob/master/autodoc).
@@ -23,7 +23,7 @@ Options:
   -c, --copy      Copy result to clipboard
 ```
 
-Example usage:
+## CLI usage:
 
 ### Print result to the console
 ```sh
@@ -32,6 +32,7 @@ autodoc <filepath> -p
 autodoc package.json -p
 autodoc https://raw.githubusercontent.com/TryKickoff/generator-kickoff/master/package.json -p
 ```
+Note: files hosted on github.com can also be used
 
 ### Copy result to your clipboard
 ```sh
