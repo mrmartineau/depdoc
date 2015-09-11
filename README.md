@@ -7,7 +7,7 @@ Autodoc simply scans your `package.json`'s `dependencies` property and returns s
 
 ```sh
 npm install --global autodoc
-``
+```
 
 ## CLI
 
