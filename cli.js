@@ -10,15 +10,16 @@ var userArgs = process.argv.slice(2);
 /**
  * TODO:
  * - Defaults:
- *   - print to console
+ *   - print to console ✔
  *   - if there's no argument, try to use a package.json from the cwd. ✔ (is this needed?)
  * - show waiting animation
+ * - add success messages for different options ✔
  */
 
 program
 	.version(version)
-	.option('-f, --file', 'The file you are parsing', 'package.json')
-	.option('-g, --generate', 'Generate a markdown file of the result')
+	.option('-f, --file <file>', 'The file you are parsing', 'package.json')
+	.option('-g, --generate <name>', 'Generate a markdown file of the result', 'autodoc')
 	.option('-p, --print', 'Print result to the console')
 	.option('-c, --copy', 'Copy result to clipboard')
 	.parse(process.argv);
@@ -36,7 +37,8 @@ if (userArgs[0].indexOf('package.json') === -1) {
 
 
 if (program.generate) {
-	fs.writeFileSync('autodoc.md', result);
+	fs.writeFileSync(program.generate +'.md', result);
+	console.log('Success! '+ program.generate +'.md has been created for you');
 }
 
 if (program.print) {
@@ -45,4 +47,5 @@ if (program.print) {
 
 if (program.copy) {
 	copyPaste.copy(result);
+	console.log('Success! Autodoc has copied the results to your clipboard');
 }
