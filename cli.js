@@ -28,10 +28,10 @@ var result;
 
 // If there is no argv, try to use a package.json in the same directory
 if (userArgs[0].indexOf('package.json') === -1) {
-	result = depdoc('package.json');
+	result = depdoc('package.json', 'file');
 } else {
 	// depdoc(program.file); // or
-	result = depdoc(userArgs[0]);
+	result = depdoc(userArgs[0], 'file');
 }
 
 
