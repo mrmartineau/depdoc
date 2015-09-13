@@ -8,7 +8,7 @@ Install with `npm install commander`
 ## [copy-paste](https://github.com/xavi-/node-copy-paste)
 A command line utility that allows read/write (i.e copy/paste) access to the system clipboard.
 
-[npm](http://npmjs.org/copy-paste) - [Homepage](https://github.com/xavi-/node-copy-paste) - [Repository](https://github.com/xavi-/node-copy-paste) (git) - [Issues](https://github.com/xavi-/node-copy-paste/issues) - Licence: undefined
+[npm](http://npmjs.org/copy-paste) - [Homepage](https://github.com/xavi-/node-copy-paste) - [Repository](https://github.com/xavi-/node-copy-paste) (git) - [Issues](https://github.com/xavi-/node-copy-paste/issues) - Licence: 
 
 Install with `npm install copy-paste`
 ---
@@ -18,6 +18,13 @@ The modern build of lodash modular utilities.
 [npm](http://npmjs.org/lodash) - [Homepage](https://lodash.com/) - [Repository](git+https://github.com/lodash/lodash.git) (git) - [Issues](https://github.com/lodash/lodash/issues) - Licence: MIT
 
 Install with `npm install lodash`
+---
+## [mustache](https://github.com/janl/mustache.js)
+Logic-less {{mustache}} templates with JavaScript
+
+[npm](http://npmjs.org/mustache) - [Homepage](https://github.com/janl/mustache.js) - [Repository](git+https://github.com/janl/mustache.js.git) (git) - [Issues](https://github.com/janl/mustache.js/issues) - Licence: MIT
+
+Install with `npm install mustache`
 ---
 ## [registry-url](https://github.com/sindresorhus/registry-url)
 Get the set npm registry URL
