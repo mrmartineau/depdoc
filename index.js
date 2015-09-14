@@ -72,7 +72,7 @@ function getPackageInformation(data) {
 		}
 
 		// TODO: Improve this:
-		result += Mustache.render("## {{name}}{{#description}}\n{{{description}}}\n{{/description}}\n[npm](http://npmjs.org/{{name}}){{#homepage}} - [Homepage]({{{homepage}}}){{/homepage}}{{#repo}} - [Repository]({{{repo.url}}}){{/repo}}{{#issues}} - [Issues]({{{issues}}}){{/issues}}{{#license}} - Licence: {{license}}{{/license}}\n\nInstall with `npm install {{name}}`\n\n---\n", packageInfoData);
+		result += Mustache.render("## {{name}}{{#description}}\n{{{description}}}\n{{/description}}\n\n[npm](http://npmjs.org/{{name}}){{#homepage}} - [Homepage]({{{homepage}}}){{/homepage}}{{#repo}} - [Repository]({{{repo.url}}}){{/repo}}{{#issues}} - [Issues]({{{issues}}}){{/issues}}{{#license}} - Licence: {{license}}{{/license}}\n\nInstall with `npm install {{name}}`\n\n---\n", packageInfoData);
 		// console.log(result);
 	});
 
