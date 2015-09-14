@@ -69,7 +69,6 @@ function getPackageInformation(data) {
 		}
 
 		var template = fs.readFileSync(__dirname + '/template.mst');
-		console.log(template.toString());
 		result += Mustache.render(template.toString(), packageInfoData);
 		// console.log(result);
 	});
