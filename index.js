@@ -71,8 +71,9 @@ function getPackageInformation(data) {
 			license: typeof packageInfo.license !== 'undefined' ? packageInfo.license : ''
 		}
 
-		// TODO: Improve this:
-		result += Mustache.render("## {{name}}{{#description}}\n{{{description}}}\n{{/description}}\n\n[npm](http://npmjs.org/{{name}}){{#homepage}} - [Homepage]({{{homepage}}}){{/homepage}}{{#repo}} - [Repository]({{{repo.url}}}){{/repo}}{{#issues}} - [Issues]({{{issues}}}){{/issues}}{{#license}} - Licence: {{license}}{{/license}}\n\nInstall with `npm install {{name}}`\n\n---\n", packageInfoData);
+		var template = fs.readFileSync(__dirname + '/template.mst');
+		console.log(template.toString());
+		result += Mustache.render(template.toString(), packageInfoData);
 		// console.log(result);
 	});
 

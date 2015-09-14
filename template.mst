@@ -1,0 +1,9 @@
+## {{name}}{{#description}}
+{{{description}}}
+{{/description}}
+
+[npm](http://npmjs.org/{{name}}){{#homepage}} - [Homepage]({{{homepage}}}){{/homepage}}{{#repo}} - [Repository]({{{repo.url}}}){{/repo}}{{#issues}} - [Issues]({{{issues}}}){{/issues}}{{#license}} - Licence: {{license}}{{/license}}
+
+Install with `npm install {{name}}`
+
+---
