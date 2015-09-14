@@ -7,12 +7,9 @@
  * depdoc https://raw.githubusercontent.com/mrmartineau/depdoc/master/package.json ✔
  *
  * TODO:
- * - Create an online version that takes json pasted in a textarea
- * - If zero dependencies, tell the user about it
  * - Error handling:
  *   - if the registry is down
  *   - if the path/filename is incorrect/doesn't exist
- *   - if the package has no dependencies ✔
  */
 
 var fs = require('fs');
