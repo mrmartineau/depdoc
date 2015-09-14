@@ -22,8 +22,10 @@ var request = require('sync-request');
 var Mustache = require('mustache');
 
 
-function depdoc(input, type) {
+function depdoc(input) {
 	var result;
+	var input = arguments[0];
+	var type = arguments.length > 1 ? arguments[1] : undefined;
 
 	if (type === 'json') {
 		result = getPackageInformation(input);
@@ -31,7 +33,7 @@ function depdoc(input, type) {
 	} else if (input.indexOf('github') > 0) {
 		var newPackageUrl = input.replace('raw.githubusercontent.com', 'rawgit.com');
 		var res = request('GET', newPackageUrl);
-		var data = res.getBody('utf-8').toString2();
+		var data = res.getBody('utf-8').toString();
 		result = getPackageInformation(JSON.parse(data));
 
 	} else {
@@ -64,13 +66,13 @@ function getPackageInformation(data) {
 			name: packageInfo.name,
 			description: typeof packageInfo.description !== 'undefined' ? packageInfo.description : '',
 			homepage: typeof packageInfo.homepage !== 'undefined' ? packageInfo.homepage : '',
-			issues: typeof packageInfo.bugs !== 'undefined' ? packageInfo.bugs.url : '',
 			repo: typeof packageInfo.repository !== 'undefined' ? packageInfo.repository : '',
+			issues: typeof packageInfo.bugs !== 'undefined' ? packageInfo.bugs.url : '',
 			license: typeof packageInfo.license !== 'undefined' ? packageInfo.license : ''
 		}
 
 		// TODO: Improve this:
-		result += Mustache.render("## {{#homepage}}[{{name}}]({{{homepage}}}){{/homepage}}{{#description}}\n{{{description}}}\n{{/description}}\n[npm](http://npmjs.org/{{name}}){{#homepage}} - [Homepage]({{{homepage}}}){{/homepage}}{{#repo}} - [Repository]({{{repo.url}}}) ({{repo.type}}){{/repo}}{{#issues}} - [Issues]({{{issues}}}){{/issues}}{{#license}} - Licence: {{license}}{{/licence}}\n\nInstall with `npm install {{name}}`\n---\n", packageInfoData);
+		result += Mustache.render("## {{name}}{{#description}}\n{{{description}}}\n{{/description}}\n[npm](http://npmjs.org/{{name}}){{#homepage}} - [Homepage]({{{homepage}}}){{/homepage}}{{#repo}} - [Repository]({{{repo.url}}}){{/repo}}{{#issues}} - [Issues]({{{issues}}}){{/issues}}{{#license}} - Licence: {{license}}{{/license}}\n\nInstall with `npm install {{name}}`\n---\n", packageInfoData);
 		// console.log(result);
 	});
 

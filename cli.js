@@ -13,7 +13,6 @@ var userArgs = process.argv.slice(2);
  *   - print to console ✔
  *   - if there's no argument, try to use a package.json from the cwd. ✔ (is this needed?)
  * - show waiting animation
- * - add success messages for different options ✔
  */
 
 program
@@ -28,10 +27,10 @@ var result;
 
 // If there is no argv, try to use a package.json in the same directory
 if (userArgs[0].indexOf('package.json') === -1) {
-	result = depdoc('package.json', 'file');
+	result = depdoc('package.json');
 } else {
 	// depdoc(program.file); // or
-	result = depdoc(userArgs[0], 'file');
+	result = depdoc(userArgs[0]);
 }
 
 
