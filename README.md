@@ -51,11 +51,13 @@ depdoc package.json -g dependencies
 depdoc https://raw.githubusercontent.com/mrmartineau/depdoc/master/package.json -g dependencies
 ```
 
-## Usage (unfinished)
+## Non-CLI usage
+depdoc can also be used in your node code, but in order for your it to parse your json, you will need to normalise it first, see below for an example from the [depdoc demo site](http://depdoc.herokuapp.com/).
 
 ```js
 var depdoc = require('depdoc');
-var package = require('./package');
+var input = document.querySelector('.packageInput').value;
+		var normalisedInput = input.replace(/\r?\n|\s|\r/g,'');
 
-console.log(depdoc(package));
+var result = depdoc(input, 'json');
 ```
