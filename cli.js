@@ -14,7 +14,7 @@ var userArgs = process.argv.slice(2);
 
 program
 	.version(version)
-	.option('-f, --file [file]', 'The file you are parsing', 'package.json')
+	//.option('-f, --file [file]', 'The file you are parsing', 'package.json')
 	.option('-g, --generate [name]', 'Generate a markdown file of the result', 'depdoc')
 	.option('-p, --print', 'Print result to the console')
 	.option('-c, --copy', 'Copy result to clipboard')
