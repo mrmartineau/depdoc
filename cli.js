@@ -23,6 +23,8 @@ program
 	.option('-c, --copy', 'Copy result to clipboard')
 	.parse(process.argv);
 
+if (!program.args.length) program.help(); // Display help if no args are provided
+
 var result;
 
 // If there is no argv, try to use a package.json in the same directory
