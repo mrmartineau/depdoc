@@ -9,9 +9,6 @@ var userArgs = process.argv.slice(2);
 
 /**
  * TODO:
- * - Defaults:
- *   - print to console ✔
- *   - if there's no argument, try to use a package.json from the cwd. ✔ (is this needed?)
  * - show waiting animation
  */
 
