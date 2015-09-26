@@ -36,7 +36,7 @@ if (userArgs[0].indexOf('package.json') === -1) {
 }
 
 
-if (program.generate) {
+if (userArgs.indexOf('-g') !== -1) {
 	fs.writeFileSync(program.generate +'.md', result);
 	console.log('Success! '+ program.generate +'.md has been created for you');
 }
