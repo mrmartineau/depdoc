@@ -38,14 +38,14 @@ if (userArgs[0].indexOf('package.json') === -1) {
 
 if (userArgs.indexOf('-g') !== -1) {
 	fs.writeFileSync(program.generate +'.md', result);
-	console.log('Success! '+ program.generate +'.md has been created for you');
+	process.stdout.write('Success! '+ program.generate +'.md has been created for you');
 }
 
 if (program.print) {
-	console.log(result);
+	process.stdout.write(result);
 }
 
 if (program.copy) {
 	copyPaste.copy(result);
-	console.log('Success! depdoc has copied the results to your clipboard');
+	process.stdout.write('Success! depdoc has copied the results to your clipboard');
 }
