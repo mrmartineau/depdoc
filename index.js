@@ -22,7 +22,7 @@ var Mustache = require('mustache');
 function depdoc(input) {
 	var result;
 	var input = arguments[0];
-	var type = arguments.length > 1 ? arguments[1] : undefined;
+	var type = arguments[1] === undefined ? arguments[1] : undefined;
 
 	if (type === 'json') {
 		result = getPackageInformation(input);
