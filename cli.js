@@ -32,7 +32,7 @@ if (userArgs[0].indexOf('package.json') === -1) {
 	result = depdoc(userArgs[0]);
 }
 
-
+// Results
 if (userArgs.indexOf('-g') !== -1) {
 	fs.writeFileSync(program.generate +'.md', result);
 	process.stdout.write('Success! '+ program.generate +'.md has been created for you');
