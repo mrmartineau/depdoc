@@ -46,3 +46,4 @@ Make synchronous web requests
 Install with `npm install sync-request`
 
 ---
+Documentation created with [depdoc](https://github.com/mrmartineau/depdoc/)
