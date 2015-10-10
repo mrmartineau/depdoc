@@ -1,6 +1,6 @@
 {
   "name": "depdoc",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "description": "Auto-generate documentation using your package.json's dependencies property",
   "repository": {
     "type": "git",
