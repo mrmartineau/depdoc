@@ -20,7 +20,12 @@ program
 	.option('-c, --copy', 'Copy result to clipboard')
 	.parse(process.argv);
 
-if (!program.args.length) program.help(); // Display help if no args are provided
+
+// Display help if no args are provided
+if (userArgs.length < 1) {
+	program.help();
+	return;
+}
 
 var result;
 
