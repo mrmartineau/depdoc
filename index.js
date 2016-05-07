@@ -24,7 +24,7 @@ var credit = 'Documentation created with [depdoc](https://github.com/mrmartineau
 function depdoc(input) {
 	var result;
 	var input = arguments[0];
-	var type = arguments[1] === undefined ? arguments[1] : undefined;
+	var type = arguments[1] === undefined ? undefined : arguments[1];
 
 	if (type === 'json') {
 		result = getPackageInformation(input);
