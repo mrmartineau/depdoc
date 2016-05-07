@@ -14,11 +14,11 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.9.0",
-    "copy-paste": "^1.1.4",
-    "lodash": "^3.10.1",
+    "copy-paste": "^1.2.0",
+    "lodash": "^4.11.2",
     "mustache": "^2.2.1",
-    "registry-url": "^3.0.3",
-    "sync-request": "^2.1.0"
+    "registry-url": "^3.1.0",
+    "sync-request": "^3.0.1"
   },
   "preferGlobal": "true",
   "bin": {
