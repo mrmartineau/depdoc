@@ -17,6 +17,7 @@ var _ = require('lodash');
 var registryUrl = require('registry-url')();
 var request = require('sync-request');
 var Mustache = require('mustache');
+var banner = '# Project dependencies\n\n';
 var credit = 'Documentation created with [depdoc](https://github.com/mrmartineau/depdoc/)'
 
 
@@ -73,7 +74,7 @@ function getPackageInformation(data) {
 		result += Mustache.render(template.toString(), packageInfoData);
 	});
 
-	return result + credit;
+	return banner + result + credit;
 }
 
 module.exports = depdoc;
