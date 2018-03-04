@@ -17,6 +17,7 @@ var _ = require('lodash');
 var registryUrl = require('registry-url')();
 var request = require('sync-request');
 var Mustache = require('mustache');
+var repo = require('gepo');
 var banner = '# Project dependencies\n\n';
 var credit = 'Documentation created with [depdoc](https://github.com/mrmartineau/depdoc/)'
 
@@ -56,16 +57,16 @@ function getPackageInformation(data) {
 	}
 
 	_.forEach(deps, function(value, key){
-
-		var res = request('GET', registryUrl + key);
-		var data = res.getBody('utf-8').toString();
+		var newKey = key.replace('/', '%2F');
+		var res = request('GET', registryUrl + newKey);
+		var data = res.getBody('utf-8');
 
 		var packageInfo = JSON.parse(data);
 		var packageInfoData = {
 			name: packageInfo.name,
 			description: typeof packageInfo.description !== 'undefined' ? packageInfo.description : '',
 			homepage: typeof packageInfo.homepage !== 'undefined' ? packageInfo.homepage : '',
-			repo: typeof packageInfo.repository !== 'undefined' ? packageInfo.repository : '',
+			repo: typeof packageInfo.repository !== 'undefined' ? repo(packageInfo.repository.url) : '',
 			issues: typeof packageInfo.bugs !== 'undefined' ? packageInfo.bugs.url : '',
 			license: typeof packageInfo.license !== 'undefined' ? packageInfo.license : ''
 		}

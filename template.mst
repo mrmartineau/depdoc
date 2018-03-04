@@ -1,9 +1,10 @@
-## {{name}}{{#description}}
+## {{{name}}}{{#description}}
 {{{description}}}
 {{/description}}
 
-[npm](http://npmjs.org/{{name}}){{#homepage}} - [Homepage]({{{homepage}}}){{/homepage}}{{#repo}} - [Repository]({{{repo.url}}}){{/repo}}{{#issues}} - [Issues]({{{issues}}}){{/issues}}{{#license}} - Licence: {{license}}{{/license}}
+[npm](http://npmjs.org/{{{name}}}){{#homepage}} - [Homepage]({{{homepage}}}){{/homepage}}{{#repo}} - [Repository]({{{repo}}}){{/repo}}{{#issues}} - [Issues]({{{issues}}}){{/issues}}{{#license}} - Licence: {{license}}{{/license}}
 
-Install with `npm install {{name}}`
+Install with npm: `npm install {{{name}}}`<br/>
+Install with yarn: `yarn add {{{name}}}`
 
 ---
