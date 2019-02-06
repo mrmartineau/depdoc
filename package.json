@@ -17,7 +17,7 @@
     "copy-paste": "^1.2.0",
     "gepo": "^1.0.0",
     "lodash": "^4.11.2",
-    "mustache": "^2.2.1",
+    "mustache": "^3.0.1",
     "registry-url": "^3.1.0",
     "sync-request": "^5.0.0"
   },
