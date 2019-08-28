@@ -153,9 +153,9 @@ minimist@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
 
-mustache@^2.2.1:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/mustache/-/mustache-2.3.0.tgz#4028f7778b17708a489930a6e52ac3bca0da41d0"
+mustache@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/mustache/-/mustache-3.0.3.tgz#ee4fb971887fa6cc1b6b6d219a74b5e3c7535f32"
 
 parse-cache-control@^1.0.1:
   version "1.0.1"
