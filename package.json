@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "commander": "^2.9.0",
+    "commander": "^4.0.0",
     "copy-paste": "^1.2.0",
     "gepo": "^1.0.0",
     "lodash": "^4.11.2",
